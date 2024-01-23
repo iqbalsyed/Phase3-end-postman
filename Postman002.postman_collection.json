@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "e23ffb98-6665-454d-bf56-d251fcc8f4d7",
+		"name": "Postman002",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13361365",
+		"_collection_link": "https://www.postman.com/speeding-satellite-378946/workspace/postman-assignment/collection/13361365-e23ffb98-6665-454d-bf56-d251fcc8f4d7?action=share&source=collection_link&creator=13361365"
+	},
+	"item": [
+		{
+			"name": "Put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"status = pm.environment.get(\"status\");\r",
+							"console.log(status);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 9223372016900013000, \"category\": {\r\n\"id\": 20021,\r\n\"name\": \"string\" },\r\n\"name\": \"doggie\", \"photoUrls\": [\r\n\"string\"\r\n], \"tags\": [\r\n{\r\n\"id\": 0,\r\n\"name\": \"string\"\r\n}\r\n],\r\n\"status\": \"{{status}}\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
